@@ -43,11 +43,17 @@
     Copyright (c) 2017 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
   </footer>
   <script>
-  if('serviceWorker' in navigator) {
-    navigator.serviceWorker
-             .register('js/sw.js')
-             .then(function() { console.log("Service Worker Registered")})
-             .catch(function(err) {console.error(err)});
+  if ('serviceWorker' in navigator) {
+      navigator.serviceWorker
+          .register('sw.js', {
+              scope: '/'
+          })
+          .then(function() {
+              console.log("Service Worker Registered")
+          })
+          .catch(function(err) {
+              console.error(err)
+          });
 
   }
   </script>

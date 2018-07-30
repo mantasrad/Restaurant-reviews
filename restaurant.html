@@ -65,7 +65,21 @@
   <!-- Google Maps -->
  <!--  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_tKbW6A5pQ-eupxI56myUnHLqYCzOjKo&libraries=places&callback=initMap"></script> -->
   <!-- End scripts -->
+  <script>
+  if ('serviceWorker' in navigator) {
+      navigator.serviceWorker
+          .register('sw.js', {
+              scope: '/'
+          })
+          .then(function() {
+              console.log("Service Worker Registered")
+          })
+          .catch(function(err) {
+              console.error(err)
+          });
 
+  }
+  </script>
 </body>
 
 </html>
