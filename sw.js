@@ -19,7 +19,7 @@ self.addEventListener('fetch', function(e) {
                 return fetch(e.request).then(function(response) {
                     let responseClone = response.clone();
 
-                    caches.open('v1').then(function(cache) {
+                    caches.open('restaurant1').then(function(cache) {
                         cache.put(e.request, responseClone);
                     });
                     return response;
